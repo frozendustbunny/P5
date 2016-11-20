@@ -1,0 +1,8 @@
+int main() {
+    int a;
+    bool b;
+    a(int) = 1;
+    b(bool) = true;
+    return a(int);
+}
+
