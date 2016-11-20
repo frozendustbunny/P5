@@ -27,17 +27,14 @@ ASTnode.class: ast.java Type.java
 harambe.jlex.java: harambe.jlex sym.class
 	java JLex.Main harambe.jlex
 
-sym.class: sym.java
+SemSym.class: SemSym.java
 	$(JC) -g sym.java
 
-sym.java: harambe.cup
+SemSym.java: harambe.cup
 	java java_cup.Main < harambe.cup
 
 ErrMsg.class: ErrMsg.java
 	$(JC) ErrMsg.java
-
-Sym.class: Sym.java Type.java ast.java
-	$(JC) -g Sym.java
 	
 SymTable.class: SymTable.java Sym.java DuplicateSymException.java EmptySymTableException.java
 	$(JC) -g SymTable.java
@@ -56,6 +53,8 @@ EmptySymTableException.class: EmptySymTableException.java
 #
 test:
 	java P5 test.ha test.out
+	echo test #1 passed
+	
 
 ###
 # clean
